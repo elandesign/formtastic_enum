@@ -1,0 +1,35 @@
+h1. FormtasticEnum
+
+An extension for Formtastic[1] to generate select inputs for belongs_to_enum[2] fields.
+
+h2. Example
+
+In the model class:
+
+<pre><code>class Task < ActiveRecord::Base
+  belongs_to_enum :status, { 1 => :new, 2 => :in_progress, 3 => :completed, 4 => :cancelled }
+end</code></pre>
+
+And in the view
+
+<pre><code><% semantic_form_for @task do |form| %>
+  <% form.inputs do %>
+    <%= form.input :status, :as => :enum
+  <% end %>
+<% end %></code></pre>
+
+h2. Dependencies
+
+You must have the formtastic gem/plugin and the belongs_to_enum plugin added to your application.
+
+h2. Todo
+
+Test, test, test...
+
+h2. References
+
+fn1. http://github.com/justinfrench/formtastic
+
+fn2. http://github.com/gsmendoza/belongs_to_enum
+
+Copyright (c) 2009 Paul Smith, released under the MIT license
