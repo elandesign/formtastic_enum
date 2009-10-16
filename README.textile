@@ -14,7 +14,7 @@ And in the view
 
 <pre><code><% semantic_form_for @task do |form| %>
   <% form.inputs do %>
-    <%= form.input :status, :as => :enum
+    <%= form.input :status, :as => :enum %>
   <% end %>
 <% end %></code></pre>
 
