@@ -28,8 +28,8 @@ Test, test, test...
 
 h2. References
 
-fn1. http://github.com/justinfrench/formtastic
+fn1. "Formtastic @ GitHub":http://github.com/justinfrench/formtastic
 
-fn2. http://github.com/gsmendoza/belongs_to_enum
+fn2. "BelongsToEnum @ Github":http://github.com/gsmendoza/belongs_to_enum
 
 Copyright (c) 2009 Paul Smith, released under the MIT license
