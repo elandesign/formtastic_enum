@@ -1,16 +1,22 @@
 require 'rake'
-require 'rake/testtask'
 require 'rake/rdoctask'
 
-desc 'Default: run unit tests.'
-task :default => :test
+gem 'rspec-rails', '>= 1.0.0'
+require 'spec/rake/spectask'
 
-desc 'Test the formtastic_enum plugin.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.libs << 'test'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
+desc 'Default: run unit specs.'
+task :default => :spec
+
+desc 'Test the formtastic plugin.'
+Spec::Rake::SpecTask.new('spec') do |t|
+  t.spec_files = FileList['spec/**/*_spec.rb']
+  t.spec_opts = ["-c"]
+end
+
+desc 'Test the formtastic plugin with specdoc formatting and colors'
+Spec::Rake::SpecTask.new('specdoc') do |t|
+  t.spec_files = FileList['spec/**/*_spec.rb']
+  t.spec_opts = ["--format specdoc", "-c"]
 end
 
 desc 'Generate documentation for the formtastic_enum plugin.'
