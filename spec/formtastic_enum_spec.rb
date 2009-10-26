@@ -60,7 +60,7 @@ describe "Formtastic" do
         }
       )
     end
-    output_buffer.should have_tag("select")
+    output_buffer.should have_tag("li.enum select")
   end
   
 end
