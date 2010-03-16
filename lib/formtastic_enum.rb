@@ -12,7 +12,7 @@ module ElanDesign
         html_options = options.delete(:input_html) || {}
         input_name = (generate_association_input_name(method).to_s + "_id").to_sym
         self.label(method, options_for_label(options).merge(:input_name => input_name)) +
-        self.select(input_name, collection, set_options(options), html_options)
+        self.select(input_name, collection, strip_formtastic_options(options), html_options)
       end    
     
     end
